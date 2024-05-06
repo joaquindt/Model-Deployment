@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+</head>
+<body>
+    <h1>Analysis Results</h1>
+    {% if results %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Criteria</th>
+                    <th>Weight</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for result in results %}
+                    <tr>
+                        <td>{{ result['Criteria'] }}</td>
+                        <td>{{ result['Weight'] }}</td>
+                        <td>{{ result['Grade'] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No results to display.</p>
+    {% endif %}
+    <a href="/">Upload another file</a>
+</body>
+</html>
